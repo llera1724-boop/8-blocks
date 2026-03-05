@@ -1,12 +1,40 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "jsx": "preserve",
-    "strict": false,
+    "target": "es5", // Измени на es5 для совместимости, если не нужно выше
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false, // Можно включить true для лучшей типизации
+    "noEmit": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "module": "esnext", // Добавь это
+    "moduleResolution": "bundler", // Ключевое! Или "node", но bundler лучше для Next.js
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx", // Верни на preserve, если reconfiguration ставит react-jsx и это вызывает проблемы (в 16+ может быть ок, но проверь)
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
