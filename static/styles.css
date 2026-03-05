@@ -1,0 +1,18 @@
+@import url('../styles/globals.css');
+
+/* Override for static build: use local image path */
+.service-card-visual--curve {
+  background-image: url('./service-curve.png');
+}
+
+.service-card-visual--orbits {
+  background-image: url('./service-orbits.png');
+}
+
+.service-card-visual--beam {
+  background-image: url('./service-beam.png');
+}
+
+.audit-visual {
+  background-image: url('./service-audit.png');
+}
